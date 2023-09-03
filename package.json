@@ -1,0 +1,40 @@
+{
+  "name": "react-async-render-props",
+  "version": "1.0.0",
+  "description": "It is a component to build children by resolving a promise with Render Props pattern.",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist",
+    "package",
+    "readme"
+  ],
+  "repository": {
+    "url": "https://github.com/hans000/react-async-render-props"
+  },
+  "bugs": {
+    "url": "https://github.com/hans000/react-async-render-props/issues"
+  },
+  "keywords": [
+    "react async render props",
+    "promise component"
+  ],
+  "author": {
+    "email": "hhance@163.com",
+    "name": "hans000"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.2.21",
+    "ahooks": "^3.7.8",
+    "react": "^18.2.0",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "ahooks": "^2.0.0 || ^3.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  }
+}
