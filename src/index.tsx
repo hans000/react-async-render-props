@@ -1,5 +1,5 @@
 import { useRequest } from "ahooks"
-import { useRef } from "react"
+import { Fragment, useRef } from "react"
 
 export type ActionRefType<T = any, P extends any[] = any> = ReturnType<typeof useRequest<T, P>> & {
   setParam: (partialParam: any, index?: number) => void
@@ -39,7 +39,7 @@ export default function AsyncRender<T, P extends any[]>(props: {
   actionRef?: React.MutableRefObject<ActionRefType<T, P>>
   request: (...params: P) => Promise<T>
   options?: Parameters<typeof useRequest<T, P>>[1]
-  children: (result: ReturnType<typeof useRequest<T, P>>, seed: string) => React.ReactElement
+  children: (result: ReturnType<typeof useRequest<T, P>>) => React.ReactElement
 }) {
   const result = useRequest(props.request, props.options)
   const seedRef = useRef('')
@@ -59,5 +59,5 @@ export default function AsyncRender<T, P extends any[]>(props: {
     }
   }
 
-  return props.children(result, seedRef.current)
+  return <Fragment key={seedRef.current}>{props.children(result)}</Fragment>
 }
